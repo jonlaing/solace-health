@@ -9,7 +9,8 @@ export default function AdvocatesTable() {
   const { data, isLoading, error } = useAdvocates({ query, page });
 
   return (
-    <table>
+    <div className="flex items-center justify-center">
+    <table className="[&_td]:p-2 [&_th]:p-2 border">
       <thead>
         <tr>
           <th>First Name</th>
@@ -41,6 +42,6 @@ export default function AdvocatesTable() {
         })}
       </tbody>
     </table>
+    </div>
   );
 }
-

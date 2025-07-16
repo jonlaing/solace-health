@@ -1,16 +1,12 @@
-import React, { Suspense } from "react";
+import React from "react";
 import SearchInput from "@/components/SearchInput";
 import AdvocatesTable from "@/components/AdvocatesTable";
 
 export default async function Home() {
   return (
-    <main style={{ margin: "24px" }}>
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
+    <main className="m-6">
+      <h1 className="text-2xl mb-4">Solace Advocates</h1>
       <SearchInput />
-      <br />
-      <br />
       <AdvocatesTable />
     </main>
   );

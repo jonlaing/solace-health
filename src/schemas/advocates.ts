@@ -14,11 +14,10 @@ export const advocateSchema = z.object({
   specialties: specialtiesSchema,
   yearsOfExperience: z.number(),
   phoneNumber: z.number(),
-  createdAt: z.date().nullable(),
+  createdAt: z.date().nullable().optional(),
 });
 
 export const advocatesSchema = z.array(advocateSchema);
 
 export type Advocate = z.infer<typeof advocateSchema>;
 export type Advocates = z.infer<typeof advocatesSchema>;
-

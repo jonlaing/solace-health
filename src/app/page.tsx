@@ -1,6 +1,6 @@
 "use client";
 import { useAdvocates } from "@/hooks/useAdvocates";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 export default function Home() {
   const [page, setPage] = useState(0);
@@ -8,16 +8,13 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const { data, isLoading, error } = useAdvocates({ query, page });
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-  };
+  }, []);
 
-  const onClick = () => {
+  const onClick = useCallback(() => {
     setQuery(searchTerm);
-  };
-
-  console.log("data", data);
-  console.log("error", error);
+  }, [searchTerm]);
 
   return (
     <main style={{ margin: "24px" }}>

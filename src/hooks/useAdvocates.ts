@@ -26,7 +26,7 @@ const fetchAdvocates = async ({ query, page }: UseAdvocatesConfig = {}) => {
   }
 
   const json = await response.json();
-  return advocatesSchema.parse(json.data);
+  return advocatesSchema.parse(json);
 };
 
 export const useAdvocates = ({ query, page }: UseAdvocatesConfig = {}) => {
@@ -35,4 +35,3 @@ export const useAdvocates = ({ query, page }: UseAdvocatesConfig = {}) => {
     queryFn: () => fetchAdvocates({ query, page }),
   });
 };
-
